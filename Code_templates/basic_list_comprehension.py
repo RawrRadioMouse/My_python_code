@@ -18,8 +18,9 @@ number_list = [ i for i in range(20) if i % 2 == 0]
 print(number_list)
 
 #nested if in list comprehension
-#he we simply add another if clause, now the iteration must be able to be divided
+#here we simply add another if clause, now the iteration must be able to be divided
 #by 2 and then dividied by 5, thus giving us each multiple of 10 (excluding 100 as range
 #function does not count the end) [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 num_list = [i for i in range(100) if i % 2 == 0 if i % 5 == 0]
 print(num_list)
+
