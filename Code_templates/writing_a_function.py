@@ -28,22 +28,31 @@ method_of_comm=["an sms on your burner sim",
                 "an email to your protonmail address",
                 "a twitter mention directing you to an onion link to an IRC",
                 ]
-unique_comm=["a direct message to your LinkedIn account (you can't even remember setting this up, it still lists your current job as 'Helpdesk monkey'",
+unique_comm=["a direct message to your LinkedIn account (you can't even remember setting this up, it still lists your current job as 'Helpdesk monkey. The message appears to be form a throwaway account.'",
              "a twitter DM from someone who lives on a boat called 'Mohn McJaffee...",
-             "a letter in the mail with 2 pages of base64.......",
+             "a letter in the mail with 2 pages of base64...There is no hallmark as to who it could be from other than the insignia of an eagle's head atop a shield",
+            ]
+rand_entity=["from a contact you made during your 1337 highschool haxx0r days",
+             "from your old boss during your time working at an MSP",
+             "sent by an anonymous contact",
+             "Billy joe bob the triple supreme nigger of justice",
+             "a string of placeholder text",
             ]
 
 choice=('')
 def choose_method(choice):
-    roll=(int(dice.roll("1d20")))    
+    roll=(int(dice.roll("1d20")))
+    
     if roll <= (17):
         choice = random.choice(method_of_comm)
-        print(choice)
+        entity=random.choice(rand_entity)
+        print("{} {}".format(choice, entity))
     else:
         choice = random.choice(unique_comm)
         unique_comm.remove(choice)
         print(choice)
-        print(unique_comm)
+
     return choose_method
 
 choose_method(choice)
+
