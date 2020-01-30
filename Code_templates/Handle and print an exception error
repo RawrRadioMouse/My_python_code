@@ -1,0 +1,6 @@
+  #in the case of an error, we print it and then close connection        
+        except Exception as err:
+                
+                print ("[*] Sumting wong... {}".format(err))
+                                 
+                client.close()  
