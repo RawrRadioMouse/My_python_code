@@ -35,7 +35,7 @@ unique_comm=["a direct message to your LinkedIn account (you can't even remember
 rand_entity=["from a contact you made during your 1337 highschool haxx0r days",
              "from your old boss during your time working at an MSP",
              "sent by an anonymous contact",
-             "Billy joe bob the triple supreme nigger of justice",
+             "Billy joe bob the triple supreme Ronald Mcdonald of justice",
              "a string of placeholder text",
             ]
 
