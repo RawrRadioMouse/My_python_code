@@ -1,5 +1,5 @@
 import random
-random1=["gay","home","bitch-ass","negro","Hoarse-voice","meh","TEST"]
+random1=["gay","home","bitch-ass","clown","Hoarse-voice","meh","TEST"]
 
 
 while True:
