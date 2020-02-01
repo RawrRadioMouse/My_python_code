@@ -56,3 +56,28 @@ def choose_method(choice):
 
 choose_method(choice)
 
+#THIRD EXAMPLE spinning up a listener with threading
+def server_loop():
+        global target
+
+        
+        # if just the listen flag is specified we listen on all
+        if not len(target):
+                target = "0.0.0.0"
+                
+        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server.bind((target,port))
+        
+        # backlog of 5 incoming requests
+        server.listen(5)
+        print ("[***] listening on {} {} [***] ".format(target,port))
+        
+        while True:
+                client_socket, addr = server.accept()
+                #print ("[\U0001F640] accepted connection from {} {}".format(target,port))
+                try:
+                # # here we make use of the threading module, we create a new thread for our connecting client AKA your revshell
+                        client_thread = threading.Thread(target=client_handler,args=(client_socket,))
+                        client_thread.start()
+                except Exception as e:
+                        print(e)
