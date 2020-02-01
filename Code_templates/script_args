@@ -1,0 +1,57 @@
+ def main():
+        global listen
+        global port
+        global execute
+        global command
+        global upload_destination
+        global target
+        # print usage if no args
+ if not len(sys.argv[1:]):
+                usage()
+                
+        # read the commandline options, our index is saying the first arg will be one of three, second and third are target and port
+        # and last is command shell. If we mess any of these up it will handle the error by printing usage
+        try:
+                opts, args = getopt.getopt(sys.argv[1:],"hle:t:p:cu:",["help","listen","execute","target","port","command","upload"])
+        except getopt.GetoptError as err:
+                print (str(err))
+                usage()
+                
+        #the below code runs a check to see which flags are specified and sets variables accordingly for further execution
+        for o,a in opts:
+                if o in ("-h","--help"):
+                        usage()
+                elif o in ("-l","--listen"):
+                        listen = True
+                elif o in ("-e", "--execute"):
+                        execute = a
+                elif o in ("-c", "--commandshell"):
+                        command = True
+                elif o in ("-u", "--upload"):
+                        upload_destination = a
+                elif o in ("-t", "--target"):
+                        target = a
+                elif o in ("-p", "--port"):
+                        port = int(a)
+                else:
+                        assert False,"Unhandled Option"
+        
+
+        # if listen flag not specified we send our malcode for execution
+        if not listen and len(target) and (port > 0):
+                
+                # read in the buffer from the commandline
+                # this will block, so send CTRL-D if not sending input
+                # to stdin
+                buffer = input() + '/n'
+                #buffer = sys.stdin.read()
+                
+                # send data off
+                client_sender(buffer)   
+        
+        # we are going to listen and potentially 
+        # upload things, execute commands and drop a shell back
+        # depending on our command line options above
+        if listen:
+                server_loop()
+   
