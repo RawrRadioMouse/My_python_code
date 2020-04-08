@@ -1,0 +1,9 @@
+Incorporate AV/Sandbox evasion.
+
+EG check for machine uptime, keyboard inputs and SYSARGS
+
+The below taken from https://github.com/initstring/pyshell/blob/master/pyshell.py
+def av_sandbox():
+    if 'pyshell.exe' not in sys.argv[0] and 'pyshell.py' not in sys.argv[0]:
+        sleep(5)
+        os._exit(1)
