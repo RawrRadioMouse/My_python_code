@@ -9,6 +9,7 @@ import random
 import threading
 import queue
 import os
+import imp
 
 from random import randrange
 from github3 import login
