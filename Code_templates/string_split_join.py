@@ -9,3 +9,5 @@ def split_and_join(line):
 result = split_and_join(line)
     print result
 
+    # chopping up a port
+    port = '\\x'+str(port[0:2]) + '\\x'+str(port[2:4])
