@@ -1,3 +1,12 @@
+#below code will print out every possible combinations of coordinates to a cuboid or some shit, I dunno exactly what the purpose is and this challenge was trash
+if __name__ == '__main__':
+    x = int(1)
+    y = int(1)
+    z = int(2)
+    n = int(3)
+
+    print([[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if n != sum([i,j,k])])
+
 #below code will create a list itemising each iteration in the string,
 #giving an output of ['h', 'u', 'm', 'a', 'n']
 test=("human")
