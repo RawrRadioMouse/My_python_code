@@ -22,9 +22,11 @@ function vowelsAndConsonants(s) {
 console.log(consonants);
 }
 
+/*
 Example above explained:
 
 First, we set a variable before the loop starts (var i = 0;)
 Then, we define the condition for the loop to run. As long as the variable is less than the length of the array (which is 4), the loop will continue
 Each time the loop executes, the variable is incremented by one (i++)
 Once the variable is no longer less than 4 (array's length), the condition is false, and the loop will end
+/*
