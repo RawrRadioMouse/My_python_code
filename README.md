@@ -14,8 +14,8 @@ Keep upskilling in Python
 Level up my basic JS and bash scripting skills
 GitGud with php to aid source code review and bug bounties
 
-leetcode.com (👔)
-hackerrank.com (👔)
-codesignal.com (👔)
-exercism.io
-projecteuler.net
+- [leetcode.com](https://leetcode.com/) (:necktie:)
+- [hackerrank.com](https://www.hackerrank.com/) (:necktie:)
+- [codesignal.com](https://codesignal.com/) (:necktie:)
+- [exercism.io](https://exercism.io/)
+- [projecteuler.net](https://projecteuler.net/)
