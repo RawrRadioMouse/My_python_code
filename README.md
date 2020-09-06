@@ -11,7 +11,9 @@ some garnishing code may or may not have been st0len from dodgy chinese forums..
 
 # Objectives
 Keep upskilling in Python
+
 Level up my basic JS and bash scripting skills
+
 GitGud with php to aid source code review and bug bounties
 
 - [leetcode.com](https://leetcode.com/) (:necktie:)
@@ -19,3 +21,12 @@ GitGud with php to aid source code review and bug bounties
 - [codesignal.com](https://codesignal.com/) (:necktie:)
 - [exercism.io](https://exercism.io/)
 - [projecteuler.net](https://projecteuler.net/)
+
+
+Python ⭐⭐⭐⭐⭐/10
+
+JS ⭐/10
+
+Bash ⭐⭐/10
+
+PHP 0/10
