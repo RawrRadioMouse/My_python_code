@@ -1,6 +1,6 @@
 /*
-Backreferences match the same text as previously matched by a capturing group.
-/*
+Backreferences match the same text as previously matched by a capturing group. EG the 1$ is matching the what we found one occurence ago (the starting char)
+/*/
 
 
 function regexVar() {
