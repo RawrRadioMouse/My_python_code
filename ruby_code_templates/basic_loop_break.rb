@@ -4,3 +4,8 @@ loop do coder.practice
         break
     end
 end
+
+
+while not coder.oh_one?
+    coder.practice
+end
