@@ -45,3 +45,73 @@ whndl = hwnds['Edit']
 pycwnd = make_pycwnd(whndl)
 msg = "r"
 send_input_hax(pycwnd,msg)
+
+
+
+from pywinauto.application import Application
+from pywinauto import keyboard
+from pywinauto.keyboard import SendKeys 
+import pywinauto
+import win32api, win32con, win32gui, win32ui, win32service, os, time
+from pywinauto import win32defines
+import win32gui
+import time
+import string
+
+app = Application(backend="uia").start("E:\\nthDcareR\\server\\c_bin\\jade.exe path=E:\\nthDcareR\\Server\\c_system ini=E:\\nthDcareR\\Server\\c_bin\\nthDcareR.ini server=multiuser schema=JadeMonitorSchema  appServer=10.2.66.203  app=RPSManager")
+
+
+while not app.windows():
+    time.sleep(1)
+time.sleep(5)
+def L337():
+    a = app.windows()
+    return (list(a))
+b = (str(L337()[0]))
+b = b.replace('hwndwrapper.DialogWrapper - ', '')
+b = b.replace("uiawrapper.UIAWrapper - '", '')
+b = b.replace("', Dialog", '')
+b = b.replace(', Jade:form', '')
+print(b)
+
+if app.window(title=b).exists():
+    dlg_spec = app.window(title=b)
+    dlg_spec.send_chars()
+    #print(app.dlg.Edit.menu())
+    #app.dlg.Edit.send_chars()
+    print(app.System)
+    #app.dlg.sendchars()
+    #send_chars()
+    #app.dlg.wrapper_object().menu_select('Menu')
+    #app.dlg.edit.send_message()
+    print (app.windows())
+    print(dlg_spec)
+    print("*"*10)
+    #dlg_spec.maximize()
+    print("*"*10)
+    print(dlg_spec.is_active())
+    print("*"*10)
+    print(dlg_spec.titlebar.friendly_class_name())
+    #print(app.window(title=b).Menu.get_properties())
+    #print(app.window(title=b).System.items())
+    #print(dlg_spec.edit.get_properties())
+    #dlg_spec.send_keystrokes('{VK_MENU}rp')
+
+    time.sleep(1)
+    #app.window(title=b).print_control_identifiers()
+    app.window(title=b).draw_outline()
+    #app.window(title=b).TitleBar.select()
+    #app.window(title="Edit").draw_outline()
+    #app.window(title=b).edit.send_keys()
+    #app.window(title=b).send_message()
+
+
+
+dlg_spec=app.window(title=b)
+dlg_spec
+dlg_spec.wrapper_object()
+
+
+#app.Dialog.child_window(title=b+tabName+"RPS",class_name='RibbonPageHeaderControl').select()
+#app.window(title=b)
+
