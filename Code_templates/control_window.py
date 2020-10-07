@@ -1,25 +1,38 @@
-import win32api, win32con, win32gui, time, subprocess,sys
+
+import win32api, win32con, win32gui, sys, time, subprocess
 from pywinauto.application import Application
 
+sys.argv = [sys.argv[0], 'caresys', 'Audiosrv', 'up']#for testing sysargs
+app = (sys.argv[1]).lower()
+ServiceName = (sys.argv[2]).lower() #Audiosrv
+State = (sys.argv[3]).lower()
+print (app)
+print (ServiceName)
+print (State)
 
+if app == ("caresys"):
+    open = Application(backend="uia").start("E:\\nthDcareR\\server\\c_bin\\jade.exe path=E:\\nthDcareR\\Server\\c_system ini=E:\\nthDcareR\\Server\\c_bin\\nthDcareR.ini server=multiuser schema=JadeMonitorSchema  appServer=10.2.66.203  app=RPSManager")
+    window = ('Jade RPS Manager [RPS Database : nthDcareR_AP01-DEV;RelationalMappingSchema::RelationalSchemaMappings]')
 
-app = string.lower(sys.argv[1])
-ServiceName = string.lower(sys.argv[2]) #Audiosrv
-State = string.lower(sys.argv[3])
+if app == ("cws"):
+    open = Application(backend="uia").start("E:\\nthDccisR1\\server\\c_bin\\jade.exe path=E:\\nthDccisR1\\Server\\c_system ini=E:\\nthDccisR1\\Server\\c_bin\\nthDccisR1.ini app=RPSManager schema=JadeMonitorSchema server=multiuser")
+    window = ("<WINDOW_NAME>")
 
-CareSYS  = Application(backend="uia").start("E:\\nthDcareR\\server\\c_bin\\jade.exe path=E:\\nthDcareR\\Server\\c_system ini=E:\\nthDcareR\\Server\\c_bin\\nthDcareR.ini server=multiuser schema=JadeMonitorSchema  appServer=10.2.66.203  app=RPSManager")
+if app == ("ccis"):
+    open   = Application(backend="uia").start("E:\\nthDpcisR\\server\\c_bin\\jade.exe path=E:\\nthDpcisR\\Server\\c_system ini=E:\\nthDpcisR\\Server\\c_bin\\nthDpcisR.ini app=RPSManager schema=JadeMonitorSchema server=multiuser appServer=10.2.66.203  app=RPSManager")
+    window = ("<WINDOW_NAME>")
 
-CCIS = Application(backend="uia").start("E:\\nthDccisR1\\server\\c_bin\\jade.exe path=E:\\nthDccisR1\\Server\\c_system ini=E:\\nthDccisR1\\Server\\c_bin\\nthDccisR1.ini app=RPSManager schema=JadeMonitorSchema server=multiuser")
+if app == ("ccis1"):
+    open   = Application(backend="uia").start("E:\\nthDpcisR\\server\\c_bin\\jade.exe path=E:\\nthDpcisR\\Server\\c_system ini=E:\\nthDpcisR\\Server\\c_bin\\nthDpcisR.ini app=RPSManager schema=JadeMonitorSchema server=multiuser appServer=10.2.66.203  app=RPSManager")
+    window = ("<WINDOW_NAME>")
 
-CCIS1 = Application(backend="uia").start("E:\\nthDccisR\\server\\c_bin\\jade.exe path=E:\\nthDccisR\\Server\\c_system ini=E:\\nthDccisR\\Server\\c_bin\\nthDccisR.ini app=RPSManager schema=JadeMonitorSchema server=mu")
+if app == ("pcis"):
+    open   = Application(backend="uia").start("E:\\nthDpcisR\\server\\c_bin\\jade.exe path=E:\\nthDpcisR\\Server\\c_system ini=E:\\nthDpcisR\\Server\\c_bin\\nthDpcisR.ini app=RPSManager schema=JadeMonitorSchema server=multiuser appServer=10.2.66.203  app=RPSManager")
+    window = ("<WINDOW_NAME>")
 
-PCIS  = Application(backend="uia").start("E:\\nthDpcisR\\server\\c_bin\\jade.exe path=E:\\nthDpcisR\\Server\\c_system ini=E:\\nthDpcisR\\Server\\c_bin\\nthDpcisR.ini app=RPSManager schema=JadeMonitorSchema server=multiuser appServer=10.2.66.203  app=RPSManager")
-
-CareSYS  = Application(backend="uia").start("E:\\nthDcareR\\server\\c_bin\\jade.exe path=E:\\nthDcareR\\Server\\c_system ini=E:\\nthDcareR\\Server\\c_bin\\nthDcareR.ini server=multiuser schema=JadeMonitorSchema  appServer=10.2.66.203  app=RPSManager")
-
-CareSYS  = Application(backend="uia").start("E:\\nthDcareR\\server\\c_bin\\jade.exe path=E:\\nthDcareR\\Server\\c_system ini=E:\\nthDcareR\\Server\\c_bin\\nthDcareR.ini server=multiuser schema=JadeMonitorSchema  appServer=10.2.66.203  app=RPSManager")
-
-WindowName
+if app == ("pcis1"):
+    open   = Application(backend="uia").start("E:\\nthDpcisR\\server\\c_bin\\jade.exe path=E:\\nthDpcisR\\Server\\c_system ini=E:\\nthDpcisR\\Server\\c_bin\\nthDpcisR.ini app=RPSManager schema=JadeMonitorSchema server=multiuser appServer=10.2.66.203  app=RPSManager")
+    window = ("<WINDOW_NAME>")
 
 ######################################################
 #***Use this code to eumerate strict window name for to use for declaring hwnd -
@@ -42,46 +55,52 @@ WindowName
 time.sleep(3)
 
 
-CareSYS = win32gui.FindWindow (None, 'Jade RPS Manager [RPS Database : nthDcareR_AP01-DEV;RelationalMappingSchema::RelationalSchemaMappings]') #b
+hwnd = win32gui.FindWindow (None, window) #b
 
-class BringDown:
-    def SoftStop(hwnd, ServiceName)
-        win32api.PostMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_KEYMENU,0)
-        time.sleep(0.5)
-        win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RIGHT,0)
-        win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RIGHT,0)
-        time.sleep(0.5)
-        win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
-        win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_DOWN,0)
-        time.sleep(0.5)
-        win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
-        win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_DOWN,0)
-        time.sleep(0.5)
-        win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RETURN,0)
-        win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RETURN,0)
-        time.sleep(2)
-    def HardStop(ServiceName)
-        subprocess.run('sc config '+ ServiceName +' start=demand')
-        time.sleep(1)
-        subprocess.run('sc stop '+ ServiceName)
+def SoftStop(hwnd):
+    
+    win32api.PostMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_KEYMENU,0)
+    time.sleep(0.5)
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RIGHT,0)
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RIGHT,0)
+    time.sleep(0.5)
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_DOWN,0)
+    time.sleep(0.5)
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_DOWN,0)
+    time.sleep(0.5)
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RETURN,0)
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RETURN,0)
+    time.sleep(2)
+    
+def HardStop(hwnd):
+    subprocess.run('sc config '+ ServiceName +' start=demand')
+    time.sleep(1)
+    subprocess.run('sc stop '+ ServiceName)
 
-class BringUp:
-    def SoftStart(hwnd, ServiceName)
-        win32api.PostMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_KEYMENU,0)
-        time.sleep(0.5)
-        win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RIGHT,0)
-        win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RIGHT,0)
-        time.sleep(0.5)
-        win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
-        win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_DOWN,0)
-        time.sleep(0.5)
-        win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RETURN,0)
-        win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RETURN,0)
 
-    def HardStart(ServiceName)
-        subprocess.run('sc start '+ ServiceName)
+def SoftStart(hwnd):
+    win32api.PostMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_KEYMENU,0)
+    time.sleep(0.5)
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RIGHT,0)
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RIGHT,0)
+    time.sleep(0.5)
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_DOWN,0)
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_DOWN,0)
+    time.sleep(0.5)
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RETURN,0)
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RETURN,0)
 
-if state="down"
-    BringDown(hwnd, ServiceName)
-if state="up"
-    BringUp(hwnd, ServiceName)
+def HardStart(hwnd):
+    subprocess.run('sc start '+ ServiceName)
+
+if State=="down":
+    SoftStop(hwnd)
+    time.sleep(1)
+    HardStop(hwnd)
+
+if State=="up":
+    SoftStart(hwnd)
+    time.sleep(1)
+    HardStart(hwnd)
