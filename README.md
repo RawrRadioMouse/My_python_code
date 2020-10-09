@@ -23,12 +23,12 @@ GitGud with php to aid source code review and bug bounties
 - [projecteuler.net](https://projecteuler.net/)
 
 
-Python ⭐⭐⭐⭐⭐/10
+Python ⭐⭐⭐⭐⭐⭐/10
 
-JS ⭐/10
+JS ⭐⭐/10
 
 Bash ⭐⭐/10
 
 Ruby 0/10
 
-PHP 0/10
+PHP ⭐/10
