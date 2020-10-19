@@ -1,5 +1,11 @@
+# echo multiple of 2's
 for ((i=1;i<=100;i++)); do
     if (( $i % 2 )); then
         echo $i
     fi
+done
+
+#echo numbers 1-50
+for ((i=1;i<=50;i++)); do
+        echo $i
 done
