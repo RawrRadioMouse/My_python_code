@@ -1,3 +1,5 @@
+# _"We are hackers and coders - in that order. This means that, as hackers, we put a premium on function over elegance as time is always scarce. When you need to quickly create a solution to a problem, style concerns come secondary."_
+
 # My_py_and_js_code
 to reference tasks I have performed in past,now with added bonus js section as I expend my skillset.
 
